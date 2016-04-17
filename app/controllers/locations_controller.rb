@@ -20,8 +20,9 @@ class LocationsController < ApplicationController
        "width" =>  32,
        "height" => 32})
 
-end
-  end
+     end
+   end
+
 
   # GET /locations/1
   # GET /locations/1.json
