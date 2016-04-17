@@ -5,11 +5,22 @@ class LocationsController < ApplicationController
   # GET /locations.json
   def index
     @locations = Location.all
-    if params[:search].present?
-      @locations = Location.near(params[:search], 50, :order => :distance)
-    else
-      @locations = Location.all?
-    end
+    # if params[:search].present?
+    #   @locations = Location.near(params[:search], 50, :order => :distance)
+    # else
+    #   @locations = Location.all?
+    # end
+
+    @hash = Gmaps4rails.build_markers(@locations) do |location, marker|
+      marker.lat location.latitude
+      marker.lng location.longitude
+      marker.infowindow location.address
+      marker.picture({
+       "url" => "http://people.mozilla.com/~faaborg/files/shiretoko/firefoxIcon/firefox-32.png",
+       "width" =>  32,
+       "height" => 32})
+        # marker.json({ title: location.title })
+end
   end
 
   # GET /locations/1
