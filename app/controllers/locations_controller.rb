@@ -3,6 +3,7 @@ class LocationsController < ApplicationController
 
   # GET /locations
   # GET /locations.json
+
   def index
     @locations = Location.all
     # if params[:search].present?
@@ -20,8 +21,11 @@ class LocationsController < ApplicationController
        "width" =>  32,
        "height" => 32})
 
+
      end
    end
+
+
 
 
   # GET /locations/1

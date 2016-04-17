@@ -6,7 +6,7 @@
 <div class="" style = "margin: 2% 4%;">
 
 
-<div style = ''>
+<div style = 'margin-bottom: 3%;'>
 
 <%= form_tag locations_path, :method => :get do %>
   <p>
@@ -14,6 +14,7 @@
     <%= submit_tag "Search Nearby Locations", :name => nil %>
   </p>
 <% end %>
+
 </div>
 
 <p id="notice"><%= notice %></p>
@@ -49,6 +50,8 @@
 <div class="" style = 'border: 2px solid #777; width: 300px; text-align: center; margin-top: 3%;'>
   <h3> <%= link_to 'Create a New Location', new_location_path %> </h3>
 </div>
+
+
 
 <br>
 
