@@ -19,7 +19,7 @@ class LocationsController < ApplicationController
        "url" => "http://people.mozilla.com/~faaborg/files/shiretoko/firefoxIcon/firefox-32.png",
        "width" =>  32,
        "height" => 32})
-        # marker.json({ title: location.title })
+
 end
   end
 
