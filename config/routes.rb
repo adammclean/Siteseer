@@ -2,6 +2,13 @@ Rails.application.routes.draw do
   resources :locations
 
   root 'locations#index'
+
+  namespace :api, defaults: { format: json },
+                            constraints: { subdomain: 'api'}, path '/' do
+    # We are going to add our list of resources here
+  end
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
