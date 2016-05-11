@@ -1,15 +1,20 @@
+require 'api_constraints'
+
 Rails.application.routes.draw do
   resources :locations
 
   root 'locations#index'
 
-  namespace :api, defaults: { format: json },
-                            constraints: { subdomain: 'api'}, path '/' do
-    scope module: :v1 do
-      constraints: ApiConstraints.new(version: 1, default: true) do
-    # We are going to add our list of resources here
-      end
+  # namespace :api, defaults: { format: json },
+  #                           constraints: { subdomain: 'api' }, path '/' do
+  #   scope module: :v1,
+  #     constraints: ApiConstraints.new(version: 1, default: true) do
+  #       #  We are going to add our list of resources here
+          resources :listings, :only => [:show]
+  #     end
+  #   end
   end
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -66,4 +71,3 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-end
